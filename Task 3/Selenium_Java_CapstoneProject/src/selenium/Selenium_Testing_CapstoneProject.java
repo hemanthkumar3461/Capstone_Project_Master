@@ -54,13 +54,13 @@ public static void main(String[] args) throws InterruptedException {
         Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id=\"filters-form\"]/div[1]/div/div/ul/li/div[1]")).click();
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id=\"price_limit_29840-41759\"]")).click();
-        Thread.sleep(2000);
+        driver.findElement(By.xpath("//*[@id=\"price_limit_19647-34734\"]")).click();
         System.out.println("Clicing radio button");
-        driver.findElement(By.xpath("//*[@id=\"filters-form\"]/div[1]/div/div/ul/li/div[2]/div/div/ul/li[1]/div/div[1]/span[2]")).click();
         Thread.sleep(2000);
+        //driver.findElement(By.xpath("//*[@id=\"filters-form\"]/div[1]/div/div/ul/li/div[2]/div/div/ul/li[1]/div/div[1]/span[2]")).click();
+        //Thread.sleep(2000);
         System.out.println("Clearing filter");
-        driver.findElement(By.xpath("//*[@id=\"price_limit_53680-65599\"]")).click();
+        driver.findElement(By.xpath("//*[@id=\"price_limit_49823-64910\"]")).click();
         Thread.sleep(2000);
         System.out.println("Changed the price limit filter");   
         System.out.println("Window closed");
