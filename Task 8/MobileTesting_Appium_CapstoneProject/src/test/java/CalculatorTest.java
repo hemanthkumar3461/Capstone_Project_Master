@@ -1,16 +1,34 @@
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import io.appium.java_client.MobileBy;
-import io.appium.java_client.MobileElement;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.MobileCapabilityType;
+import io.appium.java_client.touch.WaitOptions;
+import io.appium.java_client.touch.offset.PointOption;
 public class CalculatorTest {
+	
+	public static void scroll(AndroidDriver<WebElement> driver)
+	{
+		  TouchAction  action =new TouchAction(driver);	
+		  Dimension size	=driver.manage().window().getSize();
+		  int start_x=(int) (size.width*.5);
+		  int start_y=(int) (size.height*.5);	
+		  
+		  int end_x=(int) (size.width*.5);
+		  int end_y=(int) (size.height*.3);
+		  				
+		  action.press(PointOption.point(start_x, start_y))
+		  .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(1)))
+		  .moveTo(PointOption.point(end_x, end_y)).release().perform();
+	}
+	
 public static void main(String[] args) throws MalformedURLException, InterruptedException {
 DesiredCapabilities dc = new DesiredCapabilities();
 dc.setCapability(MobileCapabilityType.AUTOMATION_NAME, "Appium");
@@ -45,10 +63,16 @@ driver.findElementById("io.selendroid.testapp:id/input_preferedProgrammingLangua
 Thread.sleep(1000);
 driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.ListView/android.widget.CheckedTextView[4]").click();
 System.out.println("Selected python");
-Thread.sleep(5000);
+Thread.sleep(2000);
+scroll(driver);
+
+
 driver.findElementById("io.selendroid.testapp:id/input_adds").click();
 Thread.sleep(1000);
 driver.findElementById("io.selendroid.testapp:id/btnRegisterUser").click();
+Thread.sleep(1000);
+driver.findElementById("io.selendroid.testapp:id/buttonRegisterUser").click();
+
 
 /*AndroidElement list=(AndroidElement)driver.findElementById("io.selendroid.testapp:id/input_adds");
 System.out.println("Trying to scroll");
