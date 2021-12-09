@@ -1,18 +1,15 @@
 package StepDefinitions;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class StepDefinition {
-WebDriver driver =null;
+WebDriver driver;
     
-
 	@Given("the user opens the browser")
 	public void the_user_opens_the_browser_1() {
 		System.setProperty("webdriver.chrome.driver","C:\\Users\\heman\\Desktop\\UST_Workspace\\chromedriver.exe" );
@@ -20,7 +17,6 @@ WebDriver driver =null;
 		driver.manage().window().maximize();
 	}
 	    
-
 	@When("the user navigates to urban ladder")
 	public void the_user_navigates_to_urban_ladder1 () {
 		driver.get("https://www.urbanladder.com/");
@@ -74,7 +70,6 @@ WebDriver driver =null;
 	}
         
         
-        
     	@Given("the user opens the browser2")
     	public void opens_the_browser_2() {
     		System.setProperty("webdriver.chrome.driver","C:\\Users\\heman\\Desktop\\UST_Workspace\\chromedriver.exe" );
@@ -122,20 +117,10 @@ WebDriver driver =null;
         driver.findElement(By.id("address-form-submit")).click();
         
         Thread.sleep(2000);
-        System.out.println("filling up the details");
-        
-        
-        
-       
-      
-   
-        
+        System.out.println("filling up the details");        
         System.out.println("Window closed");
         driver.close();
 	}
-
-
-
 
 @Given("the user opens the browser3")
 public void opens_the_browse3() {
@@ -144,22 +129,18 @@ public void opens_the_browse3() {
 	driver.manage().window().maximize();
 }
     
-
 @When("the user navigates to urban ladder3")
 public void navigates_to_urban_ladder3() {
 	driver.get("https://www.urbanladder.com/");
 }
-
 
 @Then("selecting product in section3")
 public void selecting_product_in_section_3() throws InterruptedException {
 	driver.findElement(By.id("search")).getTagName();
     driver.manage().window().maximize();
 
-
 System.out.println("selecting the product3");
 driver.navigate().to("https://www.urbanladder.com/products/altura-coffee-table-with-nested-stools?sku=FNTBCF12TT10053&src=room");
-
 
 Thread.sleep(6000);
 driver.findElement(By.xpath("//*[@id=\"authentication_popup\"]/div[1]/div/div[2]/a[1]")).click();
@@ -184,15 +165,8 @@ driver.findElement(By.id("order_ship_address_attributes_lastname")).sendKeys("yy
 driver.findElement(By.id("order_ship_address_attributes_phone")).sendKeys("xxxxxx");
 driver.findElement(By.id("gstin")).sendKeys("gst123");
 driver.findElement(By.id("address-form-submit")).click();
-
-
-
-
-   
-
-
-    System.out.println("Window closed");
-    driver.close();
+System.out.println("Window closed");
+driver.close();
     
 
 }
@@ -236,7 +210,7 @@ driver.findElement(By.xpath("//*[@id=\"checkout-link\"]")).click();
 Thread.sleep(2000);
 System.out.println("checkout");
 
-driver.findElement(By.id("order_email")).sendKeys("abc@gmail.com");
+driver.findElement(By.xpath("//*[@id=\"order_email\"]")).sendKeys("abc@gmail.com");
 driver.findElement(By.id("order_ship_address_attributes_zipcode")).sendKeys("683580");
 driver.findElement(By.id("order_ship_address_attributes_address1")).sendKeys("abcdefg");
 driver.findElement(By.id("order_ship_address_attributes_firstname")).sendKeys("xxxxxx");
@@ -244,12 +218,6 @@ driver.findElement(By.id("order_ship_address_attributes_lastname")).sendKeys("yy
 driver.findElement(By.id("order_ship_address_attributes_phone")).sendKeys("xxxxxx");
 driver.findElement(By.id("gstin")).sendKeys("gst123");
 driver.findElement(By.id("address-form-submit")).click();
-
-
-
-   
-
-
     System.out.println("Window closed");
     driver.close();
     

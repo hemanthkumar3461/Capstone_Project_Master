@@ -13,7 +13,7 @@ public class PostTest {
 
 		JSONObject request = new JSONObject();
 		request.put("id", "3");
-		request.put("name", "ginger");
+		request.put("name", "carrot");
 
 		//System.out.println(request);
 		System.out.println(request.toString());
@@ -21,7 +21,7 @@ public class PostTest {
 		body(request).
 		when().
 		post("http://localhost:8080/products").
-		then().statusCode(201 );
+		then().statusCode(201);
 
 	}
 
