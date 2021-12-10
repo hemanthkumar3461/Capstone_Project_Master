@@ -6,10 +6,10 @@ import unittest
 
 
 class Test(unittest.TestCase):
+    browser = webdriver.Chrome \
+        (r"C:\\Users\\heman\\Desktop\\UST_Workspace\\chromedriver.exe")
 
     def setUp(self):
-        self.browser = webdriver.Chrome\
-            (r"C:\\Users\\heman\\Desktop\\UST_Workspace\\chromedriver.exe")
         url = 'https://www.urbanladder.com/'
         time.sleep(5)
         self.browser.get(url)
@@ -33,27 +33,26 @@ class Test(unittest.TestCase):
     def test_Navigate_module(self):
         self.browser.find_element(By.XPATH, "/html/body/div[1]/header/div[2]/div/nav/div/ul/li[2]/span").click()
         time.sleep(5)
-        self.browser.find_element(By.LINK_TEXT, "Sofa Set").click();
+        self.browser.find_element(By.XPATH, "/html/body/div[1]/header/div[2]/div/nav/div/ul/li[2]/div/div/ul/li[1]/ul/li[1]/a/span").click();
         time.sleep(2)
         print("Navigated to Sofa set");
 
     def test_Sorting_checkbox(self):
-        self.browser.find_element(By.XPATH, "//*[@id='filters-form']/div[1]/div/div/ul/li[4]/div[1]/div").click()
-        time.sleep(5)
-        self.browser.find_element(By.ID, "filters_brand_name_By_Urban_Ladder").click()
-        print("Sorted brand by urban ladder ")
+        self.browser.find_element(By.XPATH, "/html/body/div[2]/div[2]/div[3]/div[2]/div[1]/div/form/div[2]/div/input").click()
+        time.sleep(10)
+        print("Checkboxing done")
         time.sleep(6)
 
     def test_Sorting_radiobutton(self):
-        self.browser.find_element(By.XPATH, "//*[@id=\"filters-form\"]/div[1]/div/div/ul/li[3]/div[1]").click()
+        self.browser.find_element(By.XPATH, "/html/body/div[2]/div[2]/div[3]/div[2]/div[1]/div/form/div[1]/div/div/ul/li[1]/div[1]").click()
         time.sleep(2)
-        self.browser.find_element(By.ID, "filters_primary_colors_Greens").click()
-        print("Sorted by filters_primary_colors_Greens")
+        self.browser.find_element(By.XPATH, "/html/body/div[2]/div[2]/div[3]/div[2]/div[1]/div/form/div[1]/div/div/ul/li[1]/div[2]/div/div/ul/li[2]/div[5]/label/input").click()
+        print("Radiobutton for prices selected")
         time.sleep(1)
 
     def tearDown(self):
-        time.sleep(2)
-        self.browser.close()
+        time.sleep(4)
+        #self.browser.close()
 
 
 if __name__ == "__main__":
