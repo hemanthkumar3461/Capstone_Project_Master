@@ -55,8 +55,8 @@ describe('urbanladder_testing module living', () => {
       cy.contains('Brand').click()
 
       cy.get("#filters_brand_name_By_Wood_Edge").check()
-      cy.get("#filters_brand_name_By_Boingg_-_A_Happy_Start").check()
-      cy.get("#filters_brand_name_By_Shri_Hari_Iron_Udyog").check()
+      //cy.get("#filters_brand_name_By_Boingg_-_A_Happy_Start").check()
+      //cy.get("#filters_brand_name_By_Shri_Hari_Iron_Udyog").check()
 
 
 
@@ -67,7 +67,7 @@ describe('urbanladder_testing module living', () => {
       cy.get('.gname').invoke('show')
       cy.contains('Price').click()
 
-      cy.get("#price_limit_30000-111510").check()
+      cy.get("price_limit_30000-76167").check()
       //cy.get("#filters_brand_name_By_Boingg_-_A_Happy_Start").check()
       //cy.get("#filters_brand_name_By_Shri_Hari_Iron_Udyog").check()
 
@@ -204,7 +204,7 @@ describe('urbanladder_testing module living', () => {
       cy.get("#topnav_wrapper > ul > li.topnav_item.livingunit > div > div > ul > li:nth-child(1) > div > a").click();
 
    });
-   it('Clicking buttons Scenario 4', function () {
+   it('Clicking buttons Scenario 24', function () {
       cy.visit("https://www.urbanladder.com/fabric-sofas?src=g_topnav_living_sofa-set_fabric-sofa-sets")
       cy.contains("Price").first().click({ force: true })
       cy.get('[id="price_limit_13859-33186"]').first().click({ force: true })
