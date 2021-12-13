@@ -12,7 +12,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
-public class CalculatorTest {
+public class SelendroidAppTest {
 	
 	public static void scroll(AndroidDriver<WebElement> driver)
 	{
@@ -38,7 +38,7 @@ dc.setCapability(MobileCapabilityType.DEVICE_NAME, "OPPO A7");
 //dc.setCapability(MobileCapabilityType.APP,"C:\\Users\\heman\\Downloads\\selendroid-test-app-0.17.0.apk");
 URL url = new URL("http://127.0.0.1:4723/wd/hub");
 AndroidDriver<WebElement> driver = new AndroidDriver<WebElement> (url, dc);
-driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[8]").click();
+driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[6]").click();
 Thread.sleep(3000);
 driver.findElementById("io.selendroid.testapp:id/my_text_field").sendKeys("Play games");
 System.out.println("Typing in search bar");
@@ -66,14 +66,17 @@ System.out.println("Selected python");
 Thread.sleep(2000);
 scroll(driver);
 
-
+System.out.println("Scroll down");
 driver.findElementById("io.selendroid.testapp:id/input_adds").click();
 Thread.sleep(1000);
+System.out.println("Register and proceed");
 driver.findElementById("io.selendroid.testapp:id/btnRegisterUser").click();
 Thread.sleep(1000);
+System.out.println("Confirm and return to home page");
 driver.findElementById("io.selendroid.testapp:id/buttonRegisterUser").click();
 
-
+}
+}
 /*AndroidElement list=(AndroidElement)driver.findElementById("io.selendroid.testapp:id/input_adds");
 System.out.println("Trying to scroll");
 Thread.sleep(5000);
@@ -88,5 +91,4 @@ listitem.click();*/
 
 
 
-}
-}
+
