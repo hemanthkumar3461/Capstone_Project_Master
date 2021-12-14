@@ -67,7 +67,7 @@ describe('urbanladder_testing module living', () => {
       cy.get('.gname').invoke('show')
       cy.contains('Price').click()
 
-      cy.get("price_limit_30000-76167").check()
+      cy.get("#price_limit_4199-24999").click()
       //cy.get("#filters_brand_name_By_Boingg_-_A_Happy_Start").check()
       //cy.get("#filters_brand_name_By_Shri_Hari_Iron_Udyog").check()
 
@@ -179,8 +179,8 @@ describe('urbanladder_testing module living', () => {
    it('filters - Scene 19', function () {
 
       cy.contains("Price").click()
-      cy.get('[id="price_limit_11820-18239"]').first().click()
-      cy.url().should('include', '11820-18239')
+      cy.get("#price_limit_5849-12959").first().click()
+      cy.url().should('include', '5849-12959')
    });
 
    it('Module 3 - Visting page - Scenario 20', function () {
@@ -207,7 +207,7 @@ describe('urbanladder_testing module living', () => {
    it('Clicking buttons Scenario 24', function () {
       cy.visit("https://www.urbanladder.com/fabric-sofas?src=g_topnav_living_sofa-set_fabric-sofa-sets")
       cy.contains("Price").first().click({ force: true })
-      cy.get('[id="price_limit_13859-33186"]').first().click({ force: true })
+      cy.get("#price_limit_9870-27395").first().click({ force: true })
    });
 
    it('Assertions operations discounts filtering - Scene - 25', function () {
@@ -259,8 +259,8 @@ describe('urbanladder_testing module living', () => {
    it('filters - Scene 31', function () {
 
       cy.contains("Price").click()
-      cy.get('[id="price_limit_13153-14816"]').first().click()
-      cy.url().should('include', '13153-14816')
+      cy.get('[id="price_limit_9538-11808"]').first().click()
+      cy.url().should('include', '9538-11808')
    });
 
 })
