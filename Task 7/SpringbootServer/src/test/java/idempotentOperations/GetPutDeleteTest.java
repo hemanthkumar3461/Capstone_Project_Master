@@ -23,8 +23,8 @@ public class GetPutDeleteTest {
 	public void Put() {
 
 		JSONObject request = new JSONObject();
-		request.put("id", "3");
-		request.put("name", "ginger");
+		request.put("id", "2");
+		request.put("name", "mine");
 
 	    given().contentType(ContentType.JSON).
 		body(request).
@@ -41,7 +41,7 @@ public class GetPutDeleteTest {
 		given().
 		body(request.toJSONString()).
 		when().
-		delete("http://localhost:8080/products/3").
+		delete("http://localhost:8080/products/1").
 		then().statusCode(200).
 		log().all();
 	}
